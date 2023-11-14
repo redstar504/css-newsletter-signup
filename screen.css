@@ -1,0 +1,251 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+/* start reset */
+
+html, body, div, p, h1, h2, h3, h4, h5, h6,
+ul, ol, li, dl, dt, dd, form, fieldset, caption, legend,
+table, tr, td, th, address, blockquote, img {
+    margin: 0;
+    padding: 0;
+}
+
+img, fieldset {
+    border: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+button, label, summary {
+    cursor: pointer;
+}
+
+body, button, input, table, textarea, select {
+    font-size: 1rem;
+    line-height: 1.5;
+    font-family: inherit;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* end reset */
+
+:root {
+    --tomato: hsl(4, 100%, 67%);
+    --tomato-bg: hsla(4, 100%, 67%, 0.2);
+    --dark-slate-grey: hsl(234, 29%, 20%);
+    --charcoal-grey: hsl(235, 18%, 26%);
+    --grey: hsl(231, 7%, 60%);
+    --white: hsl(0, 0%, 100%);
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    font: 400 1em/1.5 Roboto, sans-serif;
+    background: var(--dark-slate-grey);
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}
+
+article {
+    background-image: url(assets/images/illustration-sign-up-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-color: #fff;
+    padding: 20.3em 1.75em 1.75em 1.75em;
+    max-width: 26em;
+    height: 100vh;
+}
+
+section {
+    height: 100%;
+}
+
+h1 {
+    font-size: 2.5em;
+    line-height: 1;
+    margin: 0 0 0.6em;
+    color: var(--dark-slate-grey);
+}
+
+p {
+    margin: 0.5em 0 1em;
+    font-weight: 300;
+    color: var(--dark-slate-grey);
+}
+
+ul {
+    display: flex;
+    row-gap: .25em;
+    flex-direction: column;
+    margin: 0 0 2em;
+    color: var(--dark-slate-grey);
+}
+
+li {
+    line-height: 24px;
+    display: flex;
+    column-gap: .5em;
+    margin: 0.25em 0;
+    position: relative;
+    padding-left: calc(24px + 0.625em);
+}
+
+li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 24px;
+    height: 24px;
+    background: url(assets/images/icon-list.svg) 0 0 no-repeat;
+}
+
+label, .fieldHint {
+    color: var(--dark-slate-grey);
+    font: 700 0.75em/1.5 Roboto, sans-serif;
+    display: block;
+    padding: 0 0 .5em;
+    flex-basis: 50%;
+    flex-grow: 1;
+}
+
+.fieldHint {
+    color: var(--tomato);
+    margin-left: auto;
+    text-align: right;
+    display: none;
+}
+
+form.invalid .fieldHint {
+    display: block;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+input, .button {
+    display: block;
+    border: 1px solid var(--grey);
+    width: 100%;
+    padding: 1em;
+    border-radius: 0.5em;
+    margin: 0 0 1.5em;
+    flex-basis: 100%;
+}
+
+form.invalid input:not([type="submit"]) {
+    background-color: var(--tomato-bg);
+    border: 0.075em solid var(--tomato);
+    color: var(--tomato);
+}
+
+form.invalid input:not([type="submit"]):focus {
+    outline-color: var(--tomato);
+}
+
+input[type="submit"],
+.button {
+    text-align: center;
+    background: var(--dark-slate-grey);
+    border: 0;
+    color: #fff;
+    font-weight: 700;
+}
+
+article.success {
+    background-image: url(assets/images/icon-success.svg);
+    background-position: left 2em top 8em;
+    padding-top: 14em;
+}
+
+article.success section {
+    display: flex;
+    flex-direction: column;
+}
+
+article.success .button {
+    margin-top: auto;
+    flex-basis: auto;
+}
+
+@media (min-width: 49.5em) {
+    html {
+        height: 100%;
+    }
+
+    body {
+        min-height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    article {
+        max-width: 100%;
+        width: 60em;
+        height: 40em;
+        background-image: url(assets/images/illustration-sign-up-desktop.svg);
+        background-position: right 1.5em top 1.5em;
+        border-radius: 1.5em;
+        padding-top: 1.75em;
+        margin: 0 1em;
+    }
+
+    article.success {
+        width: 32em;
+        height: 32em;
+        padding: 0;
+        background-position: top 3em left 3em;
+    }
+
+    article.success section {
+        padding: 10em 3em 2em;
+    }
+
+    article.success h1 {
+        white-space: normal;
+        line-height: 1;
+    }
+
+    h1 {
+        font: 700 3.5em/1.5 Roboto, sans-serif;
+        white-space: nowrap;
+        margin: 0;
+    }
+
+    section {
+        padding: 3.75em calc(400px + 1.75em) 0 1.75em;
+        max-width: 53.6em;
+    }
+}
