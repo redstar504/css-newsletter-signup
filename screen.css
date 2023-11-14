@@ -200,13 +200,15 @@ button:hover,
 
 article.success {
     background-image: url(assets/images/icon-success.svg);
-    background-position: left 2em top 8em;
+    background-position: left 2em top 9.25em;
     padding-top: 14em;
 }
 
 article.success section {
     display: flex;
     flex-direction: column;
+    padding-top: 2em;
+    flex-grow: 1;
 }
 
 article.success .button {
@@ -288,7 +290,7 @@ footer a {
         justify-content: flex-end;
         gap: 0.625em;
         margin: 0;
-        padding:0 0.5em;
+        padding: 0 0.5em;
         line-height: 2;
         color: #AAA;
     }
