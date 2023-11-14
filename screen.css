@@ -55,6 +55,7 @@ a {
     --tomato: hsl(4, 100%, 67%);
     --tomato-bg: hsla(4, 100%, 67%, 0.2);
     --dark-slate-grey: hsl(234, 29%, 20%);
+    --dark-slate-grey-hov: hsla(234, 29%, 20%, 0.9);
     --charcoal-grey: hsl(235, 18%, 26%);
     --grey: hsl(231, 7%, 60%);
     --white: hsl(0, 0%, 100%);
@@ -69,8 +70,9 @@ body {
     font: 400 1em/1.5 Roboto, sans-serif;
     background: var(--dark-slate-grey);
     display: flex;
-    align-items: start;
-    justify-content: center;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
 }
 
 article {
@@ -78,13 +80,15 @@ article {
     background-repeat: no-repeat;
     background-position: center top;
     background-color: #fff;
-    padding: 20.3em 1.75em 1.75em 1.75em;
     max-width: 26em;
-    height: 100vh;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 section {
     height: 100%;
+    padding: 20.3em 1.75em 1.75em 1.75em;
 }
 
 h1 {
@@ -181,6 +185,13 @@ input[type="submit"],
     border: 0;
     color: #fff;
     font-weight: 700;
+    transition: background .3s ease;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover,
+.button:hover {
+    background: var(--dark-slate-grey-hov);
 }
 
 article.success {
@@ -199,6 +210,24 @@ article.success .button {
     flex-basis: auto;
 }
 
+footer {
+    opacity: 0.5;
+    gap: 0.25rem;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: auto 0 1.75em;
+    font-size: 0.875em;
+    font-weight: 700;
+    color: var(--dark-slate-grey);
+}
+
+footer a {
+    color: var(--dark-slate-grey);
+    opacity: 0.45;
+}
+
 @media (min-width: 49.5em) {
     html {
         height: 100%;
@@ -212,14 +241,19 @@ article.success .button {
     }
 
     article {
+        display: block;
         max-width: 100%;
         width: 60em;
         height: 40em;
         background-image: url(assets/images/illustration-sign-up-desktop.svg);
         background-position: right 1.5em top 1.5em;
         border-radius: 1.5em;
-        padding-top: 1.75em;
-        margin: 0 1em;
+        margin: 0 1em 0;
+        min-height: auto;
+    }
+
+    section {
+        padding: 5.5em calc(400px + 6em) 0 3.75em;
     }
 
     article.success {
@@ -244,8 +278,18 @@ article.success .button {
         margin: 0;
     }
 
-    section {
-        padding: 3.75em calc(400px + 1.75em) 0 1.75em;
-        max-width: 53.6em;
+    footer {
+        height: 2.5rem;
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 0.625em;
+        margin: 0;
+        padding:0 0.5em;
+        line-height: 2;
+        color: #AAA;
+    }
+
+    footer a {
+        color: #AAA;
     }
 }
