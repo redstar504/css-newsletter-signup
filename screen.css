@@ -166,6 +166,11 @@ input, .button, button {
     border-radius: 0.5em;
     margin: 0 0 1.5em;
     flex-basis: 100%;
+    white-space: nowrap;
+}
+
+button {
+    padding: 1em 0 1em;
 }
 
 form.invalid input {
@@ -247,8 +252,11 @@ footer a {
     }
 
     article {
-        display: block;
+        display: flex;
         max-width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: start;
         width: 60em;
         height: 40em;
         background-image: url(assets/images/illustration-sign-up-desktop.svg);
@@ -256,10 +264,17 @@ footer a {
         border-radius: 1.5em;
         margin: 0 1em 0;
         min-height: auto;
+        flex-wrap: wrap;
     }
 
     section {
-        padding: 5.5em calc(400px + 6em) 0 3.75em;
+        flex-basis: 40%;
+        padding: 5.5em 0 0 0;
+    }
+
+    section + div {
+        height: 100%;
+        flex-basis: 400px;
     }
 
     article.success {
@@ -293,6 +308,7 @@ footer a {
         padding: 0 0.5em;
         line-height: 2;
         color: #AAA;
+        flex-basis: 100%;
     }
 
     footer a {
